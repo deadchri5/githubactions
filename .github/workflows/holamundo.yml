@@ -1,0 +1,19 @@
+name: Ejecutar Hola Mundo en C++
+
+on: [push]
+
+jobs:
+  HolaMundo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código fuente
+        uses: actions/checkout@v2
+
+      - name: Instalar compilador C++
+        run: sudo apt-get install g++
+
+      - name: Compilar y ejecutar Hola Mundo
+        run: |
+          g++ helloworld.cpp -o helloworld
+          ./helloworld
